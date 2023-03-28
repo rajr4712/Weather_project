@@ -1,0 +1,280 @@
+*, /*universal Selector*/
+*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/*color we have used in Weather pROJECT */
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    width:100vw;
+    height:100vh;
+    color: var(--colorLight2);
+    /* background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%); */
+    background-image: url(./assets/giphy.gif);
+    background-size: cover;
+}
+
+/*WEATHER APP TEXT */
+h1 {
+    text-align: center;
+    text-transform:uppercase;
+    padding-top: 20px;
+}
+
+/*YOUR WEATHER AND SEARCH WEATHER CONTAINER */
+.tab-container {
+    width:90%;
+    max-width: 550px;
+    margin: 0 auto;                           /* CONTAINER TEXT COMES IN CENTER*/
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;       /*both are at extreme end position dts y use flex, space between*/
+}
+
+/*YOUR WEATHER AND SEARCH WEATHER text */
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+/*when click on currenttab (either your weatehr or search weather tab) then grey background show */ 
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.weather-container{
+    margin-block:4rem;                   /*margin top and bottom ko 4rem set */
+}
+
+
+/*Grant Acess button style */
+.btn{
+    all: unset;                         /*button default styling properties remove */
+    /* appearance: none;              
+    border:none;
+    color: white; */
+    font-size: 0.85rem;
+    text-transform: uppercase;           /*all character are in uppercase */
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+}
+
+/*grant location container */
+.sub-container{
+    display:flex;
+    flex-direction:column;                
+    align-items: center;
+}
+
+/*At starting will not show its show by js code */
+.grant-location-container{
+    display:none;                         /*its hide this container */
+}
+
+/*when active in js code then show */
+.grant-location-container.active{
+   display:flex;
+}
+
+/*grant location image */
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+/*grant location ka ist paragraph text */
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600; 
+}
+
+/*for last paragraph text */
+.grant-location-container p:last-of-type{
+    font-size:0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+/*At starting not show */
+.loading-container{
+    display: none;
+}
+
+/*when active by js code then show */
+.loading-container.active{
+    display: flex;
+}
+
+/*paragraph show when loading image screen comes */
+.loading-container p{
+    text-transform: uppercase;
+}
+
+/* at starting not show your weather tab wala display */
+.user-info-container{
+    display:none;
+}
+
+.user-info-container.active{
+    display: flex;              /*for use all comes in horizontally coz flex by default property so we create a Sub-conatainer class */
+}
+
+/*city name and country icon container style*/
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/*weather type display ex-fog,rain,humidity etc  */
+.user-info-container p{
+    font-size:1.5rem;
+    font-weight:200;
+}
+
+/*weather image display according to weather */
+.user-info-container img{
+    width:90px;
+    height:90px;
+}
+
+
+/*city name */
+.name p{
+    font-size:2rem;
+}
+
+/*city image */
+.name img{
+width: 30px;
+height:30px;
+object-fit: contain;
+}
+
+/*temperature style by use of custom attribute */
+.user-info-container p[data-temp] {
+    font-size:2.75rem;
+    font-weight:700;
+}
+
+/* 3 card wala container in flex row position container */
+.parameter-container{
+    width:90%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; 
+}
+
+/*for card 1 , card 2 , card 3 container all of same class name -parameter */
+.parameter{
+    width:30%;
+    max-width:200px;
+    background-color: rgba(219, 226, 239, 0.5);;
+    border-radius: 5px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    gap:5px 0;
+    align-items: center; 
+}   
+
+/*card image */
+.parameter img{
+    width:50px;
+    height:50px;
+}
+
+/* all card of first paragraph */ 
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+/*value comes in last paragraph */
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/*SEARCH WEATHER wala tab  pe click then form container where input tag and button image comes */
+.form-container{
+    display: none;               /*at starting none by js active code its enable */
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+/*for input tag where city name we will enter */
+.form-container input{
+    all:unset;                               /*by default input style remove */
+    width: calc(100% - 80px);                /* 80 px give to buttton image and rest 90% me se all give to input tag*/
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+/*for placehoder text */
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);        /*search yor city text ka color */
+}
+
+/*when click placeholder or input tag then input tag border k charo side se outline create ho rhi hai */
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/*for button image */
+.form-container .btn {
+    padding:unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom:1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
