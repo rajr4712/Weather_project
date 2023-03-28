@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- font style copy from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+     
+     <h1>Weather App</h1>
+
+    <!--Div container where two Text tab contain -your weather , search weather -->
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p> 
+        </div>
+
+    
+    <div class="weather-container">
+<!--When click to Your wreather tab then this conatiner display on screen-->
+     <!-- grant location container-->
+         <div class="sub-container grant-location-container">
+         <img src="./assets/location.png" width="80" height="80" loading="lazy"> <!--location wala image-->
+                <p>grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>   <!--Grant Acess button-->
+            </div>                                           <!--data-grantacess is custom attribute-->
+
+           
+     <!-- when click to Search weather then display form input tag, Search form-container -->
+            <form class="form-container" data-searchForm>
+                <input placeholder="Search for City..." data-searchInput>
+               
+             <button class="btn" type="submit">    <!--button search wala right side me wch work is submit -->
+                    <img src="./assets/search.png"  width="20" height="20" loading="lazy">
+                </button>
+            </form>
+     
+    <!--when shift to your weather to search weather then display loading image for some second-->
+         <!--- loading screen container -->
+            <div class="loading-container">
+                <img src="./assets/loading.gif" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+           
+<!--MAIN SCREEN  "userTab DIsplay" WHENEVER YOU OPEN WEATHER PROJECT -->
+            <!-- show weather info -->
+            <div class="sub-container user-info-container">
+
+            <!--city name and Flag-->
+                <div class="name">
+                    <p data-cityName></p>  <!--Its dynamic change according to type your city name-->
+                    <img data-countryIcon>  <!--Its dynamic change image of city according to type your city name-->
+                </div>
+
+            
+                <!-- weather descriptuion-->
+                <p data-weatherDesc></p>    <!--weather details - haze, fog , rain etc ye sab show dynamically-->
+                <!--weather Icon-->
+                <img data-weatherIcon>       <!--jaisa weater waisa icon show hoga-->
+                <!--temperature-->
+                <p data-temp></p>            <!--temperature show according to city-->
+
+        
+         <!--3 cards - parameters wch is in flex row postion-->
+                <div class="parameter-container">
+
+                    <!--card 1-->
+                    <div class="parameter">
+                        <img src="assets/wind.png" >
+                        <p>windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!--card 2-->
+                    <div class="parameter">
+                        <img src="./assets/humidity.png" >
+                        <p>humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!--card 3-->
+                    <div class="parameter">
+                        <img src="./assets/cloud.png" >
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+                </div>
+             </div>
+           </div>
+        
+        </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
