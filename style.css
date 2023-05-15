@@ -28,6 +28,9 @@ h1 {
     text-align: center;
     text-transform:uppercase;
     padding-top: 20px;
+    color: blue;
+    font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*YOUR WEATHER AND SEARCH WEATHER CONTAINER */
